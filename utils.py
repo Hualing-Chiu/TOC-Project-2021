@@ -204,7 +204,7 @@ def send_button_carousel(id):
         template=ButtonsTemplate(
             title='用餐時段',
             text='點擊選擇想用餐的時段',
-            thumbnail_image_url='https://i.imgur.com/ZWMxMBT.jpg',
+            thumbnail_image_url='https://www.gomaji.com/blog/wp-content/uploads/2020/04/Da-Tung-Food-Banner-e1588216225724.jpg',
             actions=[
                 MessageTemplateAction(
                     label='早餐',
@@ -234,7 +234,7 @@ def send_breakfast(reply_token, id):
                 CarouselColumn(
                     title='早餐',
                     text='點擊看餐廳介紹',
-                    thumbnail_image_url='https://i.imgur.com/ZWMxMBT.jpg',
+                    thumbnail_image_url='https://cc.tvbs.com.tw/img/program/_data/i/upload/2019/12/02/20191202180950-569b8e0f-me.jpg',
                     actions=[
                         MessageTemplateAction(
                             label='少爺蛋餅',
@@ -253,7 +253,7 @@ def send_breakfast(reply_token, id):
                 CarouselColumn(
                     title='早餐',
                     text='點擊看餐廳介紹',
-                    thumbnail_image_url='https://i.imgur.com/ZWMxMBT.jpg',
+                    thumbnail_image_url='https://cc.tvbs.com.tw/img/program/_data/i/upload/2019/12/02/20191202180950-569b8e0f-me.jpg',
                     actions=[
                         MessageTemplateAction(
                             label='良辰吉食',
@@ -283,7 +283,7 @@ def send_restaurant_type(reply_token,id):
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url='https://i.imgur.com/M5qC6xd.jpg',
+                    thumbnail_image_url='https://img.tiffany0118.com/uploads/20200303002842_52.jpg',
                     title='餐廳推薦',
                     text='點擊選擇餐廳類型',
                     actions=[
@@ -334,7 +334,7 @@ def send_snack(reply_token, id):
         template=ButtonsTemplate(
             title='宵夜',
             text='點擊餐廳看介紹',
-            thumbnail_image_url='https://i.imgur.com/ZWMxMBT.jpg',
+            thumbnail_image_url='https://gwan.tw/wp-content/uploads/20190310174718_54.jpg',
             actions=[
                 MessageTemplateAction(
                     label='一點刈包',
@@ -390,7 +390,7 @@ def send_japanese(reply_token, id):
         template=ButtonsTemplate(
             title='日式餐廳',
             text='點擊餐廳看介紹',
-            thumbnail_image_url='https://i.imgur.com/ZWMxMBT.jpg',
+            thumbnail_image_url='https://www.gomaji.com/blog/wp-content/uploads/2019/12/F1.jpg',
             actions=[
                 MessageTemplateAction(
                     label='石火山碳燒蓋飯',
@@ -418,7 +418,7 @@ def send_korean(reply_token, id):
         template=ButtonsTemplate(
             title='韓式餐廳',
             text='點擊餐廳看介紹',
-            thumbnail_image_url='https://i.imgur.com/ZWMxMBT.jpg',
+            thumbnail_image_url='https://www.gomaji.com/blog/wp-content/uploads/2020/03/C1.jpg',
             actions=[
                 MessageTemplateAction(
                     label='歐巴不是阿啾喜',
@@ -446,7 +446,7 @@ def send_thai(reply_token, id):
         template=ButtonsTemplate(
             title='泰式餐廳',
             text='點擊餐廳看介紹',
-            thumbnail_image_url='https://i.imgur.com/M5qC6xd.jpg',
+            thumbnail_image_url='https://yijiefood.com.tw/wp-content/uploads/2020/06/%E6%B3%B0%E5%BC%8F%E6%89%93%E6%8B%8B%E8%B1%AC.jpg',
             actions=[
                 MessageTemplateAction(
                     label='珍妮花與南洋杉',
@@ -474,7 +474,7 @@ def send_healthy(reply_token, id):
         template=ButtonsTemplate(
             title='水煮健康餐',
             text='點擊餐廳看介紹',
-            thumbnail_image_url='https://saytainan.com/wp-content/uploads/2019/03/20190328-b-001.jpg',
+            thumbnail_image_url='https://scontent.fkhh1-2.fna.fbcdn.net/v/t1.6435-9/50466375_800215856987428_4821153458943950848_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=e3f864&_nc_ohc=QkpHpJcUAlUAX8Byb1s&_nc_ht=scontent.fkhh1-2.fna&oh=00_AT-A9mkY6008CIAt9bC4WXocl8mjc6QB2FkNxpomnUaGrw&oe=61F5F942',
             actions=[
                 MessageTemplateAction(
                     label='就4水煮餐',
@@ -502,7 +502,7 @@ def send_tainan(reply_token, id):
         template=ButtonsTemplate(
             title='排隊美食',
             text='點擊餐廳看介紹',
-            thumbnail_image_url='https://i.imgur.com/prSNnGs.jpg',
+            thumbnail_image_url='https://cc.tvbs.com.tw/img/program/upload/2018/10/09/20181009212526-e8f06146.jpg',
             actions=[
                 MessageTemplateAction(
                     label='雙生綠豆沙',
