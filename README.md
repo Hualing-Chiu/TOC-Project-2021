@@ -11,9 +11,9 @@ A Line bot based on a finite state machine
 
 More details in the [Slides](https://hackmd.io/@TTW/ToC-2019-Project#) and [FAQ](https://hackmd.io/s/B1Xw7E8kN)
 
-## Setup
-
-### Prerequisite
+## 創立主旨
+因為很常不知道自己三餐該吃什麼而苦惱很久，或是朋友來到成大附近常問我推薦哪些餐廳
+### 介紹
 * Python 3.6
 * Pipenv
 * Facebook Page and App
