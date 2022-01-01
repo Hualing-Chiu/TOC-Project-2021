@@ -5,30 +5,244 @@ from flask import Flask, jsonify, request, abort, send_file
 from dotenv import load_dotenv
 from linebot import LineBotApi, WebhookParser
 from linebot.exceptions import InvalidSignatureError
-from linebot.models import MessageEvent, TextMessage, TextSendMessage
-
+from linebot.models import MessageEvent, TextMessage, TextSendMessage, TemplateSendMessage, ButtonsTemplate, MessageTemplateAction, PostbackTemplateAction, CarouselTemplate, CarouselColumn
 from fsm import TocMachine
-from utils import send_text_message
+from utils import send_text_message, send_image_message
 
 load_dotenv()
 
 
 machine = TocMachine(
-    states=["user", "state1", "state2"],
+    states=["user", "start","breakfast","lunchdinner","snack","breakfast_restaurant1","breakfast_restaurant2","breakfast_restaurant3","breakfast_restaurant4","breakfast_restaurant5","breakfast_restaurant6",
+            "western","japanese","korean","thai","healthy","tainan","snack_restaurant1","snack_restaurant2","snack_restaurant3","western_restaurant1","western_restaurant2","western_restaurant3",
+            "japanese_restaurant1","japanese_restaurant2","japanese_restaurant3","korean_restaurant1","korean_restaurant2","korean_restaurant3","thai_restaurant1","thai_restaurant2","thai_restaurant3",
+            "healthy_restaurant1","healthy_restaurant2","healthy_restaurant3","tainan_restaurant1","tainan_restaurant2","tainan_restaurant3"],
     transitions=[
         {
             "trigger": "advance",
             "source": "user",
-            "dest": "state1",
-            "conditions": "is_going_to_state1",
+            "dest": "start",
+            "conditions": "is_going_to_start",
         },
         {
             "trigger": "advance",
-            "source": "user",
-            "dest": "state2",
-            "conditions": "is_going_to_state2",
+            "source": "start",
+            "dest": "breakfast",
+            "conditions": "is_going_to_breakfast",
         },
-        {"trigger": "go_back", "source": ["state1", "state2"], "dest": "user"},
+        {
+            "trigger": "advance",
+            "source": "start",
+            "dest": "lunchdinner",
+            "conditions": "is_going_to_lunchdinner",
+        },
+        {
+            "trigger": "advance",
+            "source": "start",
+            "dest": "snack",
+            "conditions": "is_going_to_snack",
+        },
+        {
+            "trigger": "advance",
+            "source": "breakfast",
+            "dest": "breakfast_restaurant1",
+            "conditions": "is_going_to_breakfast_restaurant1",
+        },
+        {
+            "trigger": "advance",
+            "source": "breakfast",
+            "dest": "breakfast_restaurant2",
+            "conditions": "is_going_to_breakfast_restaurant2",
+        },
+        {
+            "trigger": "advance",
+            "source": "breakfast",
+            "dest": "breakfast_restaurant3",
+            "conditions": "is_going_to_breakfast_restaurant3",
+        },
+        {
+            "trigger": "advance",
+            "source": "breakfast",
+            "dest": "breakfast_restaurant4",
+            "conditions": "is_going_to_breakfast_restaurant4",
+        },
+        {
+            "trigger": "advance",
+            "source": "breakfast",
+            "dest": "breakfast_restaurant5",
+            "conditions": "is_going_to_breakfast_restaurant5",
+        },
+        {
+            "trigger": "advance",
+            "source": "breakfast",
+            "dest": "breakfast_restaurant6",
+            "conditions": "is_going_to_breakfast_restaurant6",
+        },
+        {
+            "trigger": "advance",
+            "source": "lunchdinner",
+            "dest": "western",
+            "conditions": "is_going_to_western",
+        },
+        {
+            "trigger": "advance",
+            "source": "lunchdinner",
+            "dest": "japanese",
+            "conditions": "is_going_to_japanese",
+        },
+        {
+            "trigger": "advance",
+            "source": "lunchdinner",
+            "dest": "korean",
+            "conditions": "is_going_to_korean",
+        },
+        {
+            "trigger": "advance",
+            "source": "lunchdinner",
+            "dest": "thai",
+            "conditions": "is_going_to_thai",
+        },
+        {
+            "trigger": "advance",
+            "source": "lunchdinner",
+            "dest": "healthy",
+            "conditions": "is_going_to_healthy",
+        },
+        {
+            "trigger": "advance",
+            "source": "lunchdinner",
+            "dest": "tainan",
+            "conditions": "is_going_to_tainan",
+        },
+        {
+            "trigger": "advance",
+            "source": "snack",
+            "dest": "snack_restaurant1",
+            "conditions": "is_going_to_snack_restaurant1",
+        },
+        {
+            "trigger": "advance",
+            "source": "snack",
+            "dest": "snack_restaurant2",
+            "conditions": "is_going_to_snack_restaurant2",
+        },
+        {
+            "trigger": "advance",
+            "source": "snack",
+            "dest": "snack_restaurant3",
+            "conditions": "is_going_to_snack_restaurant3",
+        },
+        {
+            "trigger": "advance",
+            "source": "western",
+            "dest": "western_restaurant1",
+            "conditions": "is_going_to_western_restaurant1",
+        },
+        {
+            "trigger": "advance",
+            "source": "western",
+            "dest": "western_restaurant2",
+            "conditions": "is_going_to_western_restaurant2",
+        },
+        {
+            "trigger": "advance",
+            "source": "western",
+            "dest": "western_restaurant3",
+            "conditions": "is_going_to_western_restaurant3",
+        },
+        {
+            "trigger": "advance",
+            "source": "japanese",
+            "dest": "japanese_restaurant1",
+            "conditions": "is_going_to_japanese_restaurant1",
+        },
+        {
+            "trigger": "advance",
+            "source": "japanese",
+            "dest": "japanese_restaurant2",
+            "conditions": "is_going_to_japanese_restaurant2",
+        },
+        {
+            "trigger": "advance",
+            "source": "japanese",
+            "dest": "japanese_restaurant3",
+            "conditions": "is_going_to_japanese_restaurant3",
+        },
+        {
+            "trigger": "advance",
+            "source": "korean",
+            "dest": "korean_restaurant1",
+            "conditions": "is_going_to_korean_restaurant1",
+        },
+        {
+            "trigger": "advance",
+            "source": "korean",
+            "dest": "korean_restaurant2",
+            "conditions": "is_going_to_korean_restaurant2",
+        },
+        {
+            "trigger": "advance",
+            "source": "korean",
+            "dest": "korean_restaurant3",
+            "conditions": "is_going_to_korean_restaurant3",
+        },
+        {
+            "trigger": "advance",
+            "source": "thai",
+            "dest": "thai_restaurant1",
+            "conditions": "is_going_to_thai_restaurant1",
+        },
+        {
+            "trigger": "advance",
+            "source": "thai",
+            "dest": "thai_restaurant2",
+            "conditions": "is_going_to_thai_restaurant2",
+        },
+        {
+            "trigger": "advance",
+            "source": "thai",
+            "dest": "thai_restaurant3",
+            "conditions": "is_going_to_thai_restaurant3",
+        },
+        {
+            "trigger": "advance",
+            "source": "healthy",
+            "dest": "healthy_restaurant1",
+            "conditions": "is_going_to_healthy_restaurant1",
+        },
+        {
+            "trigger": "advance",
+            "source": "healthy",
+            "dest": "healthy_restaurant2",
+            "conditions": "is_going_to_healthy_restaurant2",
+        },
+        {
+            "trigger": "advance",
+            "source": "healthy",
+            "dest": "healthy_restaurant3",
+            "conditions": "is_going_to_healthy_restaurant3",
+        },
+        {
+            "trigger": "advance",
+            "source": "tainan",
+            "dest": "tainan_restaurant1",
+            "conditions": "is_going_to_tainan_restaurant1",
+        },
+        {
+            "trigger": "advance",
+            "source": "tainan",
+            "dest": "tainan_restaurant2",
+            "conditions": "is_going_to_tainan_restaurant2",
+        },
+        {
+            "trigger": "advance",
+            "source": "tainan",
+            "dest": "tainan_restaurant3",
+            "conditions": "is_going_to_tainan_restaurant3",
+        },
+        {"trigger": "go_back", "source": ["start","breakfast","lunchdinner","snack","breakfast_restaurant1","breakfast_restaurant2","breakfast_restaurant3","breakfast_restaurant4","breakfast_restaurant5","breakfast_restaurant6",
+         "western","japanese","korean","thai","healthy","tainan","snack_restaurant1","snack_restaurant2","snack_restaurant3","western_restaurant1","western_restaurant2","western_restaurant3","japanese_restaurant1","japanese_restaurant2","japanese_restaurant3",
+         "korean_restaurant1","korean_restaurant2","korean_restaurant3","thai_restaurant1","thai_restaurant2","thai_restaurant3","healthy_restaurant1","healthy_restaurant2","healthy_restaurant3","tainan_restaurant1","tainan_restaurant2","tainan_restaurant3"], "dest": "user"},
     ],
     initial="user",
     auto_transitions=False,
@@ -104,7 +318,14 @@ def webhook_handler():
         print(f"REQUEST BODY: \n{body}")
         response = machine.advance(event)
         if response == False:
-            send_text_message(event.reply_token, "Not Entering any State")
+            if event.message.text.lower() == 'fsm':
+                send_image_message(event.reply_token,
+                                   'https://bb26-42-77-151-32.ngrok.io/show-fsm')
+            elif machine.state != 'user' and event.message.text.lower() == 'restart':
+                send_text_message(event.reply_token,"想了解成大周邊美食嗎? 輸入『start』來尋找成大周邊美食!")
+                machine.go_back()
+            else:
+                send_text_message(event.reply_token,"想了解成大周邊美食嗎? 輸入『start』來尋找成大周邊美食!\n 輸入『restart』可以從頭開始")
 
     return "OK"
 
