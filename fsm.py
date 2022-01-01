@@ -3,7 +3,7 @@ import sys
 
 from transitions.extensions import GraphMachine
 import message_template
-from utils import send_text_message,send_breakfast,send_restaurant_type,send_snack,send_western,send_japanese,send_korean,send_healthy,send_tainan, send_thai, send_japanese_ramen_restaurant_type, send_japanese_sushi_restaurant_type, send_japanese_teishoku_restaurant_type, send_restaurant_info, send_button_carousel,send_japanese_rice_type, send_japanese_rice_restaurant_type
+from utils import send_text_message,send_breakfast,send_restaurant_type,send_snack,send_western,send_japanese,send_korean,send_healthy,send_tainan, send_thai,send_restaurant_info, send_button_carousel
 from flask import Flask, jsonify, request, abort, send_file
 from dotenv import load_dotenv
 from linebot import LineBotApi, WebhookParser
