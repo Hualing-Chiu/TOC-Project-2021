@@ -1,4 +1,4 @@
-# TOC Project 2020
+# TOC Project 2021
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/dc7fa47fcd809b99d087/maintainability)](https://codeclimate.com/github/NCKU-CCS/TOC-Project-2020/maintainability)
 
@@ -11,149 +11,21 @@ A Line bot based on a finite state machine
 
 More details in the [Slides](https://hackmd.io/@TTW/ToC-2019-Project#) and [FAQ](https://hackmd.io/s/B1Xw7E8kN)
 
-## Setup
+## 創立主旨
+因為很常不知道自己三餐該吃什麼而苦惱很久，或是朋友來到成大附近常問我推薦哪些餐廳
+## 介紹
+### 基本資訊
+![269872737_1860407774143573_1246053960537221071_n](https://user-images.githubusercontent.com/80030027/147851162-e0eb964a-0f3b-482a-8e7a-83636efa7086.jpg)
 
-### Prerequisite
-* Python 3.6
-* Pipenv
-* Facebook Page and App
-* HTTPS Server
+名稱: 成大周邊美食
 
-#### Install Dependency
-```sh
-pip3 install pipenv
-
-pipenv --three
-
-pipenv install
-
-pipenv shell
-```
-
-* pygraphviz (For visualizing Finite State Machine)
-    * [Setup pygraphviz on Ubuntu](http://www.jianshu.com/p/a3da7ecc5303)
-	* [Note: macOS Install error](https://github.com/pygraphviz/pygraphviz/issues/100)
-
-
-#### Secret Data
-You should generate a `.env` file to set Environment Variables refer to our `.env.sample`.
-`LINE_CHANNEL_SECRET` and `LINE_CHANNEL_ACCESS_TOKEN` **MUST** be set to proper values.
-Otherwise, you might not be able to run your code.
-
-#### Run Locally
-You can either setup https server or using `ngrok` as a proxy.
-
-#### a. Ngrok installation
-* [ macOS, Windows, Linux](https://ngrok.com/download)
-
-or you can use Homebrew (MAC)
-```sh
-brew cask install ngrok
-```
-
-**`ngrok` would be used in the following instruction**
-
-```sh
-ngrok http 8000
-```
-
-After that, `ngrok` would generate a https URL.
-
-#### Run the sever
-
-```sh
-python3 app.py
-```
-
-#### b. Servo
-
-Or You can use [servo](http://serveo.net/) to expose local servers to the internet.
-
-
-## Finite State Machine
-![fsm](./img/show-fsm.png)
-
-## Usage
-The initial state is set to `user`.
-
-Every time `user` state is triggered to `advance` to another state, it will `go_back` to `user` state after the bot replies corresponding message.
-
-* user
-	* Input: "go to state1"
-		* Reply: "I'm entering state1"
-
-	* Input: "go to state2"
-		* Reply: "I'm entering state2"
-
-## Deploy
-Setting to deploy webhooks on Heroku.
-
-### Heroku CLI installation
-
-* [macOS, Windows](https://devcenter.heroku.com/articles/heroku-cli)
-
-or you can use Homebrew (MAC)
-```sh
-brew tap heroku/brew && brew install heroku
-```
-
-or you can use Snap (Ubuntu 16+)
-```sh
-sudo snap install --classic heroku
-```
-
-### Connect to Heroku
-
-1. Register Heroku: https://signup.heroku.com
-
-2. Create Heroku project from website
-
-3. CLI Login
-
-	`heroku login`
-
-### Upload project to Heroku
-
-1. Add local project to Heroku project
-
-	heroku git:remote -a {HEROKU_APP_NAME}
-
-2. Upload project
-
-	```
-	git add .
-	git commit -m "Add code"
-	git push -f heroku master
-	```
-
-3. Set Environment - Line Messaging API Secret Keys
-
-	```
-	heroku config:set LINE_CHANNEL_SECRET=your_line_channel_secret
-	heroku config:set LINE_CHANNEL_ACCESS_TOKEN=your_line_channel_access_token
-	```
-
-4. Your Project is now running on Heroku!
-
-	url: `{HEROKU_APP_NAME}.herokuapp.com/callback`
-
-	debug command: `heroku logs --tail --app {HEROKU_APP_NAME}`
-
-5. If fail with `pygraphviz` install errors
-
-	run commands below can solve the problems
-	```
-	heroku buildpacks:set heroku/python
-	heroku buildpacks:add --index 1 heroku-community/apt
-	```
-
-	refference: https://hackmd.io/@ccw/B1Xw7E8kN?type=view#Q2-如何在-Heroku-使用-pygraphviz
-
-## Reference
-[Pipenv](https://medium.com/@chihsuan/pipenv-更簡單-更快速的-python-套件管理工具-135a47e504f4) ❤️ [@chihsuan](https://github.com/chihsuan)
-
-[TOC-Project-2019](https://github.com/winonecheng/TOC-Project-2019) ❤️ [@winonecheng](https://github.com/winonecheng)
-
-Flask Architecture ❤️ [@Sirius207](https://github.com/Sirius207)
-
-[Line line-bot-sdk-python](https://github.com/line/line-bot-sdk-python/tree/master/examples/flask-echo)
+![未命名](https://user-images.githubusercontent.com/80030027/147851208-faa17d5e-a49f-4e09-afd9-3ed09f1ddbce.png)
+### 使用示範
+![270107387_223222366649258_2479925003061602940_n](https://user-images.githubusercontent.com/80030027/147851263-d5b22f69-4e43-42ec-8fc8-48adfa580884.jpg)
+![270098990_890661204958225_5441431965703521232_n](https://user-images.githubusercontent.com/80030027/147851269-e1fa1af3-d35c-48d5-a44e-72280fd8f50e.jpg)
+![269688881_337925248154798_2398981990362113331_n](https://user-images.githubusercontent.com/80030027/147851276-415f63d6-7e81-4874-8683-6193c4dc6d46.jpg)
+![270007337_1340937269652712_635780419507419169_n](https://user-images.githubusercontent.com/80030027/147851287-b895261f-2574-4d62-8a70-0f5e7a6f9b7f.jpg)
+![269624613_629669724908801_3534376099995218239_n](https://user-images.githubusercontent.com/80030027/147851296-214115ea-a8ab-49dd-9f38-a35081854770.jpg)
+![270155325_185260010456777_3561675107615601023_n](https://user-images.githubusercontent.com/80030027/147851299-0bd7f954-da78-41d8-9fc3-9b3171fd9be8.jpg)
+## FSM結構圖
+![fsm](https://user-images.githubusercontent.com/80030027/147851313-8b113f67-0532-41cd-ab7d-926f1b164224.png)
