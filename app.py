@@ -320,7 +320,7 @@ def webhook_handler():
         if response == False:
             #if event.message.text.lower() == 'fsm':
                 #send_image_message(event.reply_token,'https://nckubestrestaurant.herokuapp.com/show-fsm')
-            elif machine.state != 'user' and event.message.text.lower() == 'restart':
+            if machine.state != 'user' and event.message.text.lower() == 'restart':
                 send_text_message(event.reply_token,"想了解成大周邊美食嗎? 輸入『start』來尋找成大周邊美食!")
                 machine.go_back()
             else:
