@@ -302,7 +302,7 @@ def send_thai(reply_token, id):
         template=ButtonsTemplate(
             title='泰式餐廳',
             text='點擊餐廳看介紹',
-            thumbnail_image_url='https://yijiefood.com.tw/wp-content/uploads/2020/06/%E6%B3%B0%E5%BC%8F%E6%89%93%E6%8B%8B%E8%B1%AC.jpg',
+            thumbnail_image_url='https://hululu.tw/wp-content/uploads/20190103162941_48.jpg',
             actions=[
                 MessageTemplateAction(
                     label='珍妮花與南洋杉',

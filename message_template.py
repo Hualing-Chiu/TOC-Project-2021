@@ -758,7 +758,7 @@ japanese2 = {
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://scontent.ftpe7-2.fna.fbcdn.net/v/t39.30808-6/261563548_4739774119378169_5203384407691271621_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=730e14&_nc_ohc=9EtS8VuuQHwAX8kKOux&_nc_ht=scontent.ftpe7-2.fna&oh=00_AT_J7O6Lc7ZkNi15pQWP485eDv6tYE0D6yMfNPqaNFuj-A&oe=61CFA527",
+    "url": "https://scontent.fkhh1-1.fna.fbcdn.net/v/t39.30808-6/244547720_4548406331848283_6577540345660235270_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=730e14&_nc_ohc=LxgfO9mS9ksAX8AMtAa&tn=ay2HCpHMbtwbFIaa&_nc_ht=scontent.fkhh1-1.fna&oh=00_AT-iRrLKPXIYdygArckdXHCouejoGLwCDPt18eZbzp1CrQ&oe=61D54C8E",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
@@ -847,7 +847,7 @@ japanese2 = {
         "action": {
           "type": "uri",
           "label": "菜單",
-          "uri": "https://scontent.ftpe7-3.fna.fbcdn.net/v/t39.30808-6/c0.47.764.398a/p180x540/270175427_4839453152743598_8684871849739374449_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=c4c01c&_nc_ohc=tgkedPEpNjgAX-l9nrQ&_nc_ht=scontent.ftpe7-3.fna&oh=00_AT95luRUmatIysH_l_dBkH-gsG_eh8ZwHyD33CaMnA3-ew&oe=61D001A3"
+          "uri": "https://scontent.fkhh1-2.fna.fbcdn.net/v/t39.30808-6/270175427_4839453152743598_8684871849739374449_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=c4c01c&_nc_ohc=7ZKmeAGtITAAX9DYI5B&_nc_ht=scontent.fkhh1-2.fna&oh=00_AT_pxJpY-jI1VRoHCuMCHfiKK7ls3e8vE7dIgRpPx37L7g&oe=61D501A1"
         }
       },
       {
@@ -1946,7 +1946,7 @@ healthy1 = {
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://scontent.ftpe7-2.fna.fbcdn.net/v/t39.30808-6/p960x960/246144716_909553183270199_6285983036133949527_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=7az2CI0wUM0AX-20Epp&_nc_ht=scontent.ftpe7-2.fna&oh=00_AT-pzmUEcNukaNL2X9qmTlrKM4-ro403LuM_yZsncA5n3w&oe=61CE8980",
+    "url": "https://images.deliveryhero.io/image/fd-tw/LH/z9it-hero.jpg",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
@@ -2054,7 +2054,7 @@ healthy2 = {
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://scontent.ftpe7-1.fna.fbcdn.net/v/t39.30808-6/p843x403/269860901_4659719264077937_8852892814333471428_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=a26aad&_nc_ohc=taJklitfHtAAX_LDZXo&_nc_ht=scontent.ftpe7-1.fna&oh=00_AT8Pzfpmhe2I06yaxKJeHq8nuZH0miJ4ONboGswd0exm8A&oe=61CED3C6",
+    "url": "https://farm5.staticflickr.com/4866/46342547542_b79edbfccb_c.jpg",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
