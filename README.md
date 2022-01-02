@@ -12,7 +12,7 @@ A Line bot based on a finite state machine
 More details in the [Slides](https://hackmd.io/@TTW/ToC-2019-Project#) and [FAQ](https://hackmd.io/s/B1Xw7E8kN)
 
 ## 創立主旨
-因為很常不知道自己三餐該吃什麼而苦惱很久，或是朋友來到成大附近常問我推薦哪些餐廳
+因為很常不知道自己三餐該吃什麼而苦惱很久，或是朋友來到成大附近常問我推薦哪些餐廳，就可以直接讓他們加入這個官方帳號選自己想吃的餐廳類型
 ## 介紹
 ### 基本資訊
 ![269872737_1860407774143573_1246053960537221071_n](https://user-images.githubusercontent.com/80030027/147851162-e0eb964a-0f3b-482a-8e7a-83636efa7086.jpg)
